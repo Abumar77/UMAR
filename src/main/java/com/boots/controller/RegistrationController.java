@@ -18,6 +18,10 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/")
+    public String Main( Model model) {
+        return "home";
+    }
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
@@ -40,6 +44,6 @@ public class RegistrationController {
             return "registration";
         }
 
-        return "redirect:/";
+        return "redirect:/login";
     }
 }
