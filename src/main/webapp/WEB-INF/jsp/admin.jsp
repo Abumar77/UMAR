@@ -17,6 +17,7 @@
         <th>UserName</th>
         <th>Password</th>
         <th>Roles</th>
+        <th>Courses</th>
         </thead>
         <c:forEach items="${allUsers}" var="user">
             <tr>
@@ -25,6 +26,9 @@
                 <td>${user.password}</td>
                 <td>
                     <c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach>
+                </td>
+                <td>
+                    <c:forEach items="${user.courses}" var="course">${course.cname}; </c:forEach>
                 </td>
                 <td>
                     <form action="${pageContext.request.contextPath}/admin" method="post">
