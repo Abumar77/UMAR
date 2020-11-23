@@ -61,7 +61,7 @@
             <h1 class="neswgo">Your Course to Success</h1>
             <p class="lead text-muted">Build skills with courses, certificates, and degrees online from world-class universities and companies. </p>
             <p>
-                <a href="/courses" class="btn btn-primary my-2">Join for Free</a>
+                <a href="/courses" class="btn btn-primary my-2">Просмотр курсов</a>
                
             </p>
             <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://s3.amazonaws.com/coursera_assets/front-page-rebrand/hero/hero-c-2.png?auto=format%2Ccompress&dpr=1&w=459&h=497&q=40" alt="Coursera logo">

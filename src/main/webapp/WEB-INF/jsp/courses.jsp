@@ -22,19 +22,16 @@
                 <a class="p-2 text-dark" href="/admin" >Админ</a>
                 <b>${pageContext.request.userPrincipal.name}</b>
 
-
-                <sec:authorize access="!isAuthenticated()">
-                    <a class="btn btn-outline-primary" href="/login">Войти</a>
-                    <a class="btn btn-outline-primary" href="/registration">Зарегистрироваться</a>
-                </sec:authorize>
                 <sec:authorize access="isAuthenticated()">
                     <a class="btn btn-outline-primary" href="/logout">Выйти</a>
                 </sec:authorize>
             </nav>
         </div>
     </div>
-    <h2>Новости <br> Только для залогинившихся пользователей.</h2>
-    <a href="/">Главная</a>
+
+
+    <div class="container mt-5"></div>
+
 </div>
 
 
