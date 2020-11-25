@@ -10,24 +10,20 @@ import org.springframework.ui.Model;
 
 
 @Controller
-public class AdminController {
+public class MainController {
     @Autowired
     private UserService userService;
 
     @Autowired
     CourseRepository courseRepository;
 
+    //Admin Controllers
     @GetMapping("/admin")
     public String userList(Model model) {
         model.addAttribute("allUsers", userService.allUsers());
         return "admin";
     }
 
-    @GetMapping("/courses")
-    public String coursesList(Model model) {
-         model.addAttribute("allCourses",userService.allCourses());
-        return "courses";
-    }
 
     @PostMapping("/admin")
     public String  deleteUser(@RequestParam(required = true, defaultValue = "" ) Long userId,
@@ -43,5 +39,19 @@ public class AdminController {
     public String  gtUser(@PathVariable("userId") Long userId, Model model) {
         model.addAttribute("allUsers", userService.usergtList(userId));
         return "admin";
+    }
+
+    //Course controllers
+    @GetMapping("/courses")
+    public String coursesList(Model model) {
+        model.addAttribute("allCourses",userService.allCourses());
+        return "courses";
+    }
+
+    @GetMapping("/courses/gt/{cid}")
+    public String coursesgt(@PathVariable("cid") int cid, Model model) {
+        cid = cid -1;
+        model.addAttribute("allCourses",userService.coursegt(cid));
+        return "startcourse";
     }
 }

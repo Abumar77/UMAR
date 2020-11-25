@@ -58,9 +58,6 @@ public class UserService implements UserDetailsService {
     public List<User> allUsers() {
         return userRepository.findAll();
     }
-    public List<Course> allCourses() {
-        return courseRepository.findAll();
-    }
 
 
 
@@ -88,6 +85,16 @@ public class UserService implements UserDetailsService {
 
     public List<User> usergtList(Long idMin) {
         return em.createQuery("SELECT u FROM User u WHERE u.id > :paramId", User.class)
+                .setParameter("paramId", idMin).getResultList();
+    }
+
+    public List<Course> allCourses() {
+        return courseRepository.findAll();
+    }
+
+
+    public List<Course> coursegt(int idMin) {
+        return em.createQuery("SELECT c FROM Course c WHERE c.cid > :paramId", Course.class)
                 .setParameter("paramId", idMin).getResultList();
     }
 }

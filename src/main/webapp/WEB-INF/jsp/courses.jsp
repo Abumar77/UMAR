@@ -28,34 +28,40 @@
         </div>
     </div>
 
-
-
-
-    <div class="container mt-5">
+    <div class="row">
         <c:forEach items="${allCourses}" var="course">
-        <div class="alert alert-info mt-2"0><h3>${course.cname};</h3>
-            <br>
-        <p>${course.description};</p>
-            <br>
-            <p>  <b>Price:</b> ${course.cprice} $ ;</p>
-            <br>
-            <button class="btn btn-lg btn-primary" type="submit">More Details</button>
+
+        <div class="col-md-4">
+
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="/courses/gt/${course.cid}">${course.cname};</a>
+                </h4>
+                <h5>${course.cprice} $ </h5>
+                <p class="card-text">${course.description};</p>
+                <a href="/courses/gt/${course.cid}" class="btn btn-lg btn-primary" type="submit">More Details</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">★ ★ ★ ★ ☆</small>
+            </div>
+        </div>
 
         </div>
         </c:forEach>
-    </div>
 
+    </div>
 </div>
 
-
+<br><br><br>
 <footer class="text-muted">
     <div class="container">
         <p class="float-right">
-            <a href="#">Back to top</a>
+            <a href="/courses">Back to top</a>
         </p>
-        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.5/getting-started/introduction/">getting started guide</a>.</p>
-    </div>
+        <p>© 2020 Coursera Inc. All rights reserved.</p>
+     </div>
 </footer>
 </body>
 </html>
