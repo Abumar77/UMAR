@@ -1,7 +1,9 @@
 package com.boots.service;
 
+import com.boots.entity.Course;
 import com.boots.entity.Role;
 import com.boots.entity.User;
+import com.boots.repository.CourseRepository;
 import com.boots.repository.RoleRepository;
 import com.boots.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,11 @@ public class UserService implements UserDetailsService {
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    @Autowired
+    CourseRepository courseRepository;
+
+
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
@@ -51,6 +58,12 @@ public class UserService implements UserDetailsService {
     public List<User> allUsers() {
         return userRepository.findAll();
     }
+    public List<Course> allCourses() {
+        return courseRepository.findAll();
+    }
+
+
+
 
     public boolean saveUser(User user) {
         User userFromDB = userRepository.findByUsername(user.getUsername());

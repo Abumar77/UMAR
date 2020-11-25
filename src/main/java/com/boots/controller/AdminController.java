@@ -1,5 +1,7 @@
 package com.boots.controller;
 
+ import com.boots.entity.Course;
+ import com.boots.repository.CourseRepository;
  import com.boots.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +14,19 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    CourseRepository courseRepository;
+
     @GetMapping("/admin")
     public String userList(Model model) {
         model.addAttribute("allUsers", userService.allUsers());
         return "admin";
+    }
+
+    @GetMapping("/courses")
+    public String coursesList(Model model) {
+         model.addAttribute("allCourses",userService.allCourses());
+        return "courses";
     }
 
     @PostMapping("/admin")

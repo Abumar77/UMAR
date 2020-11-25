@@ -5,9 +5,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Новости</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Courses</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
 <div>
@@ -30,24 +29,20 @@
     </div>
 
 
+
+
     <div class="container mt-5">
-        <c:forEach items="${allUsers}" var="user">
-        <tr>
-            <td>${user.id}</td>
-            <td>${user.username}</td>
-            <td>${user.password}</td>
-            <td>
-                <c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach>
-            </td>
-            <td>
-                <form action="${pageContext.request.contextPath}/admin" method="post">
-                    <input type="hidden" name="userId" value="${user.id}"/>
-                    <input type="hidden" name="action" value="delete"/>
-                    <button type="submit">Delete</button>
-                </form>
-            </td>
-        </tr>
-    </c:forEach>
+        <c:forEach items="${allCourses}" var="course">
+        <div class="alert alert-info mt-2"0><h3>${course.cname};</h3>
+            <br>
+        <p>${course.description};</p>
+            <br>
+            <p>  <b>Price:</b> ${course.cprice} $ ;</p>
+            <br>
+            <button class="btn btn-lg btn-primary" type="submit">More Details</button>
+
+        </div>
+        </c:forEach>
     </div>
 
 </div>
