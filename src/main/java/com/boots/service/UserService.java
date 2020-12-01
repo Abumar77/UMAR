@@ -94,7 +94,7 @@ public class UserService implements UserDetailsService {
 
 
     public List<Course> coursegt(int idMin) {
-        return em.createQuery("SELECT c FROM Course c WHERE c.cid > :paramId", Course.class)
+        return em.createQuery("SELECT c FROM Course c WHERE c.cid = :paramId", Course.class)
                 .setParameter("paramId", idMin).getResultList();
     }
 }

@@ -50,7 +50,7 @@ public class MainController {
 
     @GetMapping("/courses/gt/{cid}")
     public String coursesgt(@PathVariable("cid") int cid, Model model) {
-        cid = cid -1;
+
         model.addAttribute("allCourses",userService.coursegt(cid));
         return "startcourse";
     }

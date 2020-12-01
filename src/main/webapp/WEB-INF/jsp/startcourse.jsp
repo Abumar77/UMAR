@@ -30,12 +30,10 @@
 
 
 
-
     <div class="container mt-5">
         <c:forEach items="${allCourses}" var="course">
-            <div class="col-md-4">
 
-                <div class="card h-100">
+                <div class="alert alert-info mt-2">
                     <a href="#"><img class="card-img-top" src="" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
@@ -46,8 +44,7 @@
                         <a href="/courses/${course.cid}/start" class="btn btn-lg btn-primary" type="submit">Start the Course</a>
                     </div>
                      </div>
-                </div>
-        </c:forEach>
+         </c:forEach>
 
     </div>
 
