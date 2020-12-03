@@ -12,15 +12,15 @@ public class Content {
 
     private String cont_name;
 
-    @OneToMany (mappedBy = "contentT")
+    @OneToMany (mappedBy = "contentV")
     private Set<VideoMaterials> videos;
     private int cont_vi_id;
 
-    @OneToMany (mappedBy = "content")
+    @OneToMany (mappedBy = "contentT")
     private Set<TextMaterials> texts;
     private int cont_text_id;
 
-    @OneToMany (mappedBy = "contentV")
+    @OneToMany (mappedBy = "content")
     private Set<Week> weeks;
     private int week_id;
 

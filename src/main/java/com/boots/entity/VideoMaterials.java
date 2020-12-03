@@ -27,6 +27,10 @@ public class VideoMaterials {
         this.contentV = contentV;
     }
 
+    public VideoMaterials() {
+
+    }
+
     public int getVid() {
         return vid;
     }
