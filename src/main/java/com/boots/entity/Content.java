@@ -22,24 +22,20 @@ public class Content {
 
     @OneToMany (mappedBy = "content")
     private Set<Week> weeks;
-    private int week_id;
+//
+//    @OneToOne(mappedBy = "contents")
+//    private Course courses;
 
 
 
-    @OneToOne(mappedBy = "contents")
-    private Course courses;
-
-
-
-    public Content(String cont_name, Set<VideoMaterials> videos, int cont_vi_id, Set<TextMaterials> texts, int cont_text_id, Set<Week> weeks, int week_id, Course courses) {
+    public Content(String cont_name, Set<VideoMaterials> videos, int cont_vi_id, Set<TextMaterials> texts, int cont_text_id, Set<Week> weeks, Course courses) {
         this.cont_name = cont_name;
         this.videos = videos;
         this.cont_vi_id = cont_vi_id;
         this.texts = texts;
         this.cont_text_id = cont_text_id;
         this.weeks = weeks;
-        this.week_id = week_id;
-        this.courses = courses;
+      //  this.courses = courses;
     }
 
     public Content() {
@@ -101,20 +97,12 @@ public class Content {
     public void setCont_text_id(int cont_text_id) {
         this.cont_text_id = cont_text_id;
     }
-
-    public int getWeek_id() {
-        return week_id;
-    }
-
-    public void setWeek_id(int week_one_id) {
-        this.week_id = week_one_id;
-    }
-
-    public Course getCourses() {
-        return courses;
-    }
-
-    public void setCourses(Course courses) {
-        this.courses = courses;
-    }
+//
+//    public Course getCourses() {
+//        return courses;
+//    }
+//
+//    public void setCourses(Course courses) {
+//        this.courses = courses;
+//    }
 }

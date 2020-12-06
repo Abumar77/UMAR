@@ -1,6 +1,7 @@
 package com.boots.entity;
 
 import javax.persistence.*;
+import java.sql.Blob;
 
 
 @Entity
@@ -20,12 +21,14 @@ public class VideoMaterials {
     private Content contentV;
 
 
-    public VideoMaterials(String nameVideoMaterial, String description, Content contentV) {
 
+    public VideoMaterials(String nameVideoMaterial, String description, Content contentV ) {
         this.nameVideoMaterial = nameVideoMaterial;
         this.description = description;
         this.contentV = contentV;
-    }
+     }
+
+
 
     public VideoMaterials() {
 

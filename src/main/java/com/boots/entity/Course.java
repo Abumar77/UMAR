@@ -21,17 +21,17 @@ public class Course {
     @ManyToMany(mappedBy = "courses")
     private Set<User> users;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    private Content contents;
+//    @OneToOne(fetch = FetchType.EAGER)
+//    private Content contents;
 
-
-    public Content getContents() {
-        return contents;
-    }
-
-    public void setContents(Content contents) {
-        this.contents = contents;
-    }
+//
+//    public Content getContents() {
+//        return contents;
+//    }
+//
+//    public void setContents(Content contents) {
+//        this.contents = contents;
+//    }
 
     public int getCid() {
         return cid;
@@ -82,6 +82,6 @@ public class Course {
         this.description = description;
         this.cprice = cprice;
         this.users = users;
-        this.contents = contents;
+      //  this.contents = contents;
     }
 }

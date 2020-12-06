@@ -1,11 +1,7 @@
 package com.boots.service;
 
-import com.boots.entity.Course;
-import com.boots.entity.Role;
-import com.boots.entity.User;
-import com.boots.repository.CourseRepository;
-import com.boots.repository.RoleRepository;
-import com.boots.repository.UserRepository;
+import com.boots.entity.*;
+import com.boots.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -37,8 +33,20 @@ public class UserService implements UserDetailsService {
     @Autowired
     CourseRepository courseRepository;
 
+    @Autowired
+    ContentRepository contentRepository;
+
+    @Autowired
+    TextRepository textRepository;
+
+    @Autowired
+    VideoRepository videoRepository;
+
+    @Autowired
+    WeekRepository weekRepository;
 
 
+    // USER
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
@@ -88,6 +96,11 @@ public class UserService implements UserDetailsService {
                 .setParameter("paramId", idMin).getResultList();
     }
 
+
+
+
+
+    // Course service
     public List<Course> allCourses() {
         return courseRepository.findAll();
     }
@@ -97,4 +110,25 @@ public class UserService implements UserDetailsService {
         return em.createQuery("SELECT c FROM Course c WHERE c.cid = :paramId", Course.class)
                 .setParameter("paramId", idMin).getResultList();
     }
+
+    public List<Week> allweek() {
+        return weekRepository.findAll();
+    }
+
+    public List<VideoMaterials> allvideo() {
+        return videoRepository.findAll();
+    }
+
+
+    public List<Week> weekget(int idMin) {
+        return em.createQuery("SELECT c FROM Week c WHERE c.wid = :paramId", Week.class)
+                .setParameter("paramId", idMin).getResultList();
+    }
+
+    public List<VideoMaterials> videoget(int idMin) {
+        return em.createQuery("SELECT c FROM VideoMaterials c WHERE c.vid = :paramId", VideoMaterials.class)
+                .setParameter("paramId", idMin).getResultList();
+    }
+
+
 }

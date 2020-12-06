@@ -2,6 +2,7 @@ package com.boots.controller;
 
  import com.boots.entity.Course;
  import com.boots.repository.CourseRepository;
+ import com.boots.repository.WeekRepository;
  import com.boots.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,9 @@ public class MainController {
 
     @Autowired
     CourseRepository courseRepository;
+
+    @Autowired
+    WeekRepository weekRepository;
 
     //Admin Controllers
     @GetMapping("/admin")
@@ -53,5 +57,13 @@ public class MainController {
 
         model.addAttribute("allCourses",userService.coursegt(cid));
         return "startcourse";
+    }
+
+    @GetMapping("/courses/{wid}/start")
+    public String weekget(@PathVariable("wid") int wid, Model model) {
+
+        model.addAttribute("allweek",userService.weekget(wid));
+        model.addAttribute("allvideo",userService.videoget(wid));
+        return "week";
     }
 }
