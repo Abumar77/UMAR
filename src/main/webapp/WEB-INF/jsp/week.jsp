@@ -50,6 +50,7 @@
 
 </div>
 
+<div class="container mt-5">
 <c:forEach items="${allvideo}" var="video">
 
     <div class="alert alert-info mt-2">
@@ -58,11 +59,11 @@
             <h4 class="card-title">
               </h4>
              <p class="card-text">${video.description}</p>
-<%--            <video src="">${video.video_video}</video>--%>
+           <video src="">${video.blob}</video>
          </div>
     </div>
 </c:forEach>
-
+</div>
 <br><br><br>
 <footer class="text-muted">
     <div class="container">

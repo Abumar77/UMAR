@@ -21,14 +21,24 @@ public class VideoMaterials {
     private Content contentV;
 
 
+    @Lob()
+    private Blob blob;
 
-    public VideoMaterials(String nameVideoMaterial, String description, Content contentV ) {
+
+    public VideoMaterials(String nameVideoMaterial, String description, Content contentV, Blob blob) {
         this.nameVideoMaterial = nameVideoMaterial;
         this.description = description;
         this.contentV = contentV;
-     }
+        this.blob = blob;
+    }
 
+    public Blob getBlob() {
+        return blob;
+    }
 
+    public void setBlob(Blob blob) {
+        this.blob = blob;
+    }
 
     public VideoMaterials() {
 
