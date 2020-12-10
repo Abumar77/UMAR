@@ -59,11 +59,14 @@
             <h4 class="card-title">
               </h4>
              <p class="card-text">${video.description}</p>
-           <video src="">${video.blob}</video>
+           <video autoplay controls width="700" src="https://umarcoursera.s3.us-east-2.amazonaws.com/01-01+Welcome+to+this+course!.mkv"></video>
          </div>
     </div>
 </c:forEach>
 </div>
+
+
+
 <br><br><br>
 <footer class="text-muted">
     <div class="container">
