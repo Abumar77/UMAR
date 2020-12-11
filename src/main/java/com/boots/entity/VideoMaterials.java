@@ -20,18 +20,23 @@ public class VideoMaterials {
     @JoinColumn(name = "cont_id")
     private Content contentV;
 
+    private String url;
 
 
-
-
-    public VideoMaterials(String nameVideoMaterial, String description, Content contentV) {
+    public VideoMaterials(String nameVideoMaterial, String description, Content contentV, String url) {
         this.nameVideoMaterial = nameVideoMaterial;
         this.description = description;
         this.contentV = contentV;
-
+        this.url = url;
     }
 
+    public String getUrl() {
+        return url;
+    }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public VideoMaterials() {
 

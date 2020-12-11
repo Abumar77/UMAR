@@ -64,6 +64,19 @@ public class MainController {
 
         model.addAttribute("allweek",userService.weekget(wid));
         model.addAttribute("allvideo",userService.videoget(wid));
+        model.addAttribute("alltext",userService.txtget(wid));
+
         return "week";
+    }
+
+
+    @GetMapping("/courses/{tid}/text")
+    public String textget(@PathVariable("tid") int tid, Model model) {
+
+        model.addAttribute("allweek",userService.weekget(tid));
+
+        model.addAttribute("alltext",userService.txtget(tid));
+
+        return "weektxt";
     }
 }

@@ -59,9 +59,11 @@
             <h4 class="card-title">
               </h4>
              <p class="card-text">${video.description}</p>
-           <video autoplay controls width="700" src="https://umarcoursera.s3.us-east-2.amazonaws.com/01-01+Welcome+to+this+course!.mkv"></video>
+           <video autoplay controls width="1000" src=${video.url}></video>
          </div>
     </div>
+    <a href="/courses/${video.vid}/text">Next</a>
+
 </c:forEach>
 </div>
 
@@ -71,7 +73,7 @@
 <footer class="text-muted">
     <div class="container">
         <p class="float-right">
-            <a href="/courses">Back to top</a>
+            <a href="/">Back to top</a>
         </p>
         <p>© 2020 Coursera Inc. All rights reserved.</p>
      </div>

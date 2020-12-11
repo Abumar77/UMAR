@@ -9,7 +9,7 @@ public class TextMaterials {
         @GeneratedValue(strategy = GenerationType.AUTO)
          private int tid;
 
-         private String nameMaterial;
+         private String name_material;
          private String full_text;
 
 
@@ -19,7 +19,7 @@ public class TextMaterials {
 
 
     public TextMaterials(String nameMaterial, String full_text, Content contentT) {
-        this.nameMaterial = nameMaterial;
+        this.name_material = nameMaterial;
         this.full_text = full_text;
         this.contentT = contentT;
     }
@@ -36,12 +36,12 @@ public class TextMaterials {
         this.tid = tid;
     }
 
-    public String getNameMaterial() {
-        return nameMaterial;
+    public String getName_material() {
+        return name_material;
     }
 
-    public void setNameMaterial(String nameMaterial) {
-        this.nameMaterial = nameMaterial;
+    public void setName_material(String nameMaterial) {
+        this.name_material = nameMaterial;
     }
 
     public String getFull_text() {

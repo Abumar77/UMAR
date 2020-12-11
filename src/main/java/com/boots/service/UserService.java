@@ -119,6 +119,10 @@ public class UserService implements UserDetailsService {
         return videoRepository.findAll();
     }
 
+    public List<TextMaterials> alltext() {
+        return textRepository.findAll();
+    }
+
 
     public List<Week> weekget(int idMin) {
         return em.createQuery("SELECT c FROM Week c WHERE c.wid = :paramId", Week.class)
@@ -130,5 +134,9 @@ public class UserService implements UserDetailsService {
                 .setParameter("paramId", idMin).getResultList();
     }
 
+    public List<TextMaterials> txtget(int idMin) {
+        return em.createQuery("SELECT c FROM TextMaterials c WHERE c.tid = :paramId", TextMaterials.class)
+                .setParameter("paramId", idMin).getResultList();
+    }
 
 }
