@@ -1,9 +1,15 @@
 package com.boots.entity;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
-import java.util.HashMap;
 import java.util.Set;
 
+@Data
+@NoArgsConstructor
 @Entity
 public class Content {
     @Id
@@ -38,65 +44,7 @@ public class Content {
       //  this.courses = courses;
     }
 
-    public Content() {
 
-    }
-
-    public Set<VideoMaterials> getVideos() {
-        return videos;
-    }
-
-    public void setVideos(Set<VideoMaterials> videos) {
-        this.videos = videos;
-    }
-
-    public Set<TextMaterials> getTexts() {
-        return texts;
-    }
-
-    public void setTexts(Set<TextMaterials> texts) {
-        this.texts = texts;
-    }
-
-    public Set<Week> getWeeks() {
-        return weeks;
-    }
-
-    public void setWeeks(Set<Week> weeks) {
-        this.weeks = weeks;
-    }
-
-    public int getCont_id() {
-        return cont_id;
-    }
-
-    public void setCont_id(int cont_id) {
-        this.cont_id = cont_id;
-    }
-
-    public String getCont_name() {
-        return cont_name;
-    }
-
-    public void setCont_name(String cont_name) {
-        this.cont_name = cont_name;
-    }
-
-    public int getCont_vi_id() {
-        return cont_vi_id;
-    }
-
-    public void setCont_vi_id(int cont_vi_id) {
-        this.cont_vi_id = cont_vi_id;
-    }
-
-    public int getCont_text_id() {
-        return cont_text_id;
-    }
-
-    public void setCont_text_id(int cont_text_id) {
-        this.cont_text_id = cont_text_id;
-    }
 //
 //    public Course getCourses() {
 //        return courses;

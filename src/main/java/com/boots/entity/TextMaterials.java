@@ -1,7 +1,12 @@
 package com.boots.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
 @Entity
 public class TextMaterials {
 
@@ -21,42 +26,6 @@ public class TextMaterials {
     public TextMaterials(String nameMaterial, String full_text, Content contentT) {
         this.name_material = nameMaterial;
         this.full_text = full_text;
-        this.contentT = contentT;
-    }
-
-    public TextMaterials() {
-
-    }
-
-    public int getTid() {
-        return tid;
-    }
-
-    public void setTid(int tid) {
-        this.tid = tid;
-    }
-
-    public String getName_material() {
-        return name_material;
-    }
-
-    public void setName_material(String nameMaterial) {
-        this.name_material = nameMaterial;
-    }
-
-    public String getFull_text() {
-        return full_text;
-    }
-
-    public void setFull_text(String full_text) {
-        this.full_text = full_text;
-    }
-
-    public Content getContentT() {
-        return contentT;
-    }
-
-    public void setContentT(Content contentT) {
         this.contentT = contentT;
     }
 }

@@ -1,0 +1,5 @@
+amazonProperties:
+  endpointUrl: https://s3.us-east-2.amazonaws.com
+  accessKey: AKIA3TZLGEGTXCBTXHNO
+  secretKey: 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
+  bucketName: umarcoursera
