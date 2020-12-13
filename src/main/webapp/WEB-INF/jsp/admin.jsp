@@ -39,6 +39,41 @@
                 </td>
             </tr>
         </c:forEach>
+        <br><br><br>
+        <h1>Want to upload files for lessons?</h1>
+        <form:form method = "POST" modelAttribute = "form"
+                   enctype = "multipart/form-data">
+            Please select a file to upload :
+            <input type = "file" name = "file"  />
+            <input type = "submit" value = "upload" />
+        </form:form>
+
+        <br><br><br>
+
+        <script>
+
+            var form = new FormData();
+            form.append("file", "CROPPED-IMG_3236.JPG");
+
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://localhost:8080/storage/uploadFile/2",
+                "method": "POST",
+                "headers": {
+                    "cache-control": "no-cache",
+                    "postman-token": "fadb96b9-e7b8-0855-77d2-c0075565df8e"
+                },
+                "processData": false,
+                "contentType": false,
+                "mimeType": "multipart/form-data",
+                "data": form
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+        </script>
     </table>
     <a href="/">Главная</a>
 </div>

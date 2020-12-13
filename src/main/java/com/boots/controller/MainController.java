@@ -1,6 +1,5 @@
 package com.boots.controller;
 
- import com.boots.entity.Course;
  import com.boots.repository.CourseRepository;
  import com.boots.repository.WeekRepository;
  import com.boots.service.UserService;
@@ -12,14 +11,13 @@ import org.springframework.ui.Model;
 
 @Controller
 public class MainController {
-    @Autowired
-    private UserService userService;
 
-    @Autowired
-    CourseRepository courseRepository;
+    private final UserService userService;
 
-    @Autowired
-    WeekRepository weekRepository;
+
+    public MainController(UserService userService) {
+        this.userService = userService;
+    }
 
     //Admin Controllers
     @GetMapping("/admin")

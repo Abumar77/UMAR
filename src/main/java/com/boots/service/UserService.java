@@ -3,7 +3,6 @@ package com.boots.service;
 import com.boots.entity.*;
 import com.boots.repository.*;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,29 +21,40 @@ public class UserService implements UserDetailsService {
     @PersistenceContext
     private EntityManager em;
 
-    @Autowired
-    UserRepository userRepository;
 
-    @Autowired
-    RoleRepository roleRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Autowired
-    CourseRepository courseRepository;
+    private final  RoleRepository roleRepository;
 
-    @Autowired
-    ContentRepository contentRepository;
 
-    @Autowired
-    TextRepository textRepository;
+    private final  BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Autowired
-    VideoRepository videoRepository;
 
-    @Autowired
-    WeekRepository weekRepository;
+    private final CourseRepository courseRepository;
+
+
+    private final ContentRepository contentRepository;
+
+
+    private final TextRepository textRepository;
+
+
+    private final VideoRepository videoRepository;
+
+
+    private final WeekRepository weekRepository;
+
+    public UserService(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder bCryptPasswordEncoder, CourseRepository courseRepository, ContentRepository contentRepository, TextRepository textRepository, VideoRepository videoRepository, WeekRepository weekRepository) {
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.courseRepository = courseRepository;
+        this.contentRepository = contentRepository;
+        this.textRepository = textRepository;
+        this.videoRepository = videoRepository;
+        this.weekRepository = weekRepository;
+    }
 
 
     // USER

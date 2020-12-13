@@ -2,7 +2,6 @@ package com.boots.controller;
 
 import com.boots.entity.User;
 import com.boots.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,8 +14,12 @@ import javax.validation.Valid;
 @Controller
 public class RegistrationController {
 
-    @Autowired
-    private UserService userService;
+
+    private final UserService userService;
+
+    public RegistrationController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/")
     public String Main( Model model) {
