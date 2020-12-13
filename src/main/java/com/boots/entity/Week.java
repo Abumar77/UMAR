@@ -1,9 +1,13 @@
 package com.boots.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Set;
 
-
+@Data
+@NoArgsConstructor
 @Entity
 public class Week {
     @Id
@@ -26,33 +30,6 @@ public class Week {
         this.content = content;
     }
 
-    public Week() {
-
-    }
-
-    public int getWid() {
-        return wid;
-    }
-
-    public void setWid(int wid) {
-        this.wid = wid;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
 
     public Content getContent() {
         return content;

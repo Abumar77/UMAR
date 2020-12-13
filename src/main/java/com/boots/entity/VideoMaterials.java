@@ -1,9 +1,12 @@
 package com.boots.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import java.sql.Blob;
 
-
+@Data
+@NoArgsConstructor
 @Entity
 public class VideoMaterials {
 
@@ -30,47 +33,5 @@ public class VideoMaterials {
         this.url = url;
     }
 
-    public String getUrl() {
-        return url;
-    }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public VideoMaterials() {
-
-    }
-
-    public int getVid() {
-        return vid;
-    }
-
-    public void setVid(int vid) {
-        this.vid = vid;
-    }
-
-    public String getNameVideoMaterial() {
-        return nameVideoMaterial;
-    }
-
-    public void setNameVideoMaterial(String nameVideoMaterial) {
-        this.nameVideoMaterial = nameVideoMaterial;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Content getContentV() {
-        return contentV;
-    }
-
-    public void setContentV(Content contentV) {
-        this.contentV = contentV;
-    }
 }

@@ -2,6 +2,7 @@ package com.boots.service;
 
 import com.boots.entity.*;
 import com.boots.repository.*;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -47,13 +48,11 @@ public class UserService implements UserDetailsService {
 
 
     // USER
+    @SneakyThrows
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new Exception("Student not found - " + username));
 
         return user;
     }
@@ -71,7 +70,7 @@ public class UserService implements UserDetailsService {
 
 
     public boolean saveUser(User user) {
-        User userFromDB = userRepository.findByUsername(user.getUsername());
+        Optional<User> userFromDB = userRepository.findByUsername(user.getUsername());
 
         if (userFromDB != null) {
             return false;
