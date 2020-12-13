@@ -17,8 +17,8 @@
             <nav class="my-2 my-md-0 mr-md-3">
                 <a class="p-2 text-dark" href="/">Главное</a>
                 <a class="p-2 text-dark" href="/news">Новости (Users)</a>
-                <a class="p-2 text-dark" href="/about">О нас</a>
-                <a class="p-2 text-dark" href="/admin" >Админ</a>
+                <a class="p-2 text-dark" href="https://vc.ru/">Новости (Users)</a>
+                <a class="p-2 text-dark" href="https://about.coursera.org/">О нас</a>
                 <b>${pageContext.request.userPrincipal.name}</b>
 
                 <sec:authorize access="isAuthenticated()">
